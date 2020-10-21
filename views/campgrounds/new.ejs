@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+    <div class="container" id="loginpage">
+        <h1 style="text-align: center">Create a New Blog </h1>
+        <div >
+            <form action="/campgrounds" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="image" placeholder="image url">
+                </div>
+                <div class="form-group">
+                    <textarea rows=5 name="description" id="description" placeholder="Description" style="width: 100%;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label title="Video" style="padding-left: 10px; font-size: 20px;">Video</label>
+                    <input type="file" name="video" id="video">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/campgrounds">Go Back</a>
+        </div>
+    </div>
+<% include ../partials/footer %>
+

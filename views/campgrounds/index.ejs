@@ -1,0 +1,32 @@
+<% include ../partials/header %> 
+
+     <header class="jumbotron" style="background-image: linear-gradient(to bottom right, rgb(233, 187, 135), rgb(174, 207, 202));">
+         <div class="container">
+             <h1><span class="glyphicon glyphicon-globe "></span> Welcome To YourBlog!</h1>
+             <p>View our Blogs from different people of all communities.</p>
+             <p>
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Blog</a>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-4 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= campground.image %>">
+                    <video controls style="width: 100%;">
+                        <source src="/Bold Diaries_ RCB Quiz Night.mp4" type="video/mp4">
+                    </video>
+                   <div class="caption">
+                       <h4><%= campground.name %></h4>
+                   </div>
+                   <p>
+                       <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<% include ../partials/footer %>
